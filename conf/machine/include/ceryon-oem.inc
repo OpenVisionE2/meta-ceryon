@@ -1,11 +1,7 @@
 # We know about rtc
 include conf/machine/include/build-extras.inc
 
-MTD_KERNEL = "mtd1"
-MTD_ROOTFS = "mtd2"
-
 KERNEL_FILE = "kernel.bin"
-ROOTFS_FILE = "rootfs.bin"
 
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"

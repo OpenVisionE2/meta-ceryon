@@ -1,5 +1,10 @@
 require conf/machine/include/ceryon-oem.inc
 
+ROOTFS_FILE = "rootfs.bin"
+
+MTD_KERNEL = "mtd1"
+MTD_ROOTFS = "mtd2"
+
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
