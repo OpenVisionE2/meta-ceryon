@@ -6,11 +6,11 @@ KERNEL_FILE = "kernel.bin"
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
     kernel-module-cdfs \
     "
 
-MACHINE_EXTRA_RRECOMMENDS = " \
+MACHINE_EXTRA_RRECOMMENDS += "\
     ${@bb.utils.contains("GST_VERSION", "1.0", "gstreamer1.0-plugin-dvbmediasink", "gst-plugin-dvbmediasink", d)} \
     gstreamer1.0-libav \
     "
