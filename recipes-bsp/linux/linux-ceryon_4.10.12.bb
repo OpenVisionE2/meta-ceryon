@@ -4,6 +4,8 @@ LICENSE = "GPLv2"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
+COMPATIBLE_MACHINE = "protek4k"
+
 KERNEL_RELEASE = "4.10.12"
 
 inherit kernel machine_kernel_pr

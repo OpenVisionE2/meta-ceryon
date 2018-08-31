@@ -4,6 +4,8 @@ LICENSE = "GPLv2"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
+COMPATIBLE_MACHINE = "9910lx|9911lx|e4hd|e4hdcombo|e4hdhybrid|odin2hybrid|odinplus|sf208|sf228|sf238|singleboxlcd|twinboxlcd|twinboxlcdci5"
+
 KERNEL_RELEASE = "4.0.1"
 
 inherit kernel machine_kernel_pr
