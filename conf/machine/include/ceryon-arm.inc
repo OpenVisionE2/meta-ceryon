@@ -4,11 +4,14 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 
 MTD_KERNEL = "mmcblk0p2"
 MTD_ROOTFS = "mmcblk0p3"
-
 MTD_BOOTFS = "mmcblk0p1"
 
 MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc linuxwifi swap qthbbtv multitranscoding minitv mountboot"
 #MACHINE_FEATURES += "kodi"
+
+MACHINE_EXTRA_RRECOMMENDS += "\
+    ceryon-lcd \
+"
 
 IMAGE_CLASSES += "ceryon-emmc_image_multi"
 
