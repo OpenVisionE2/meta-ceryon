@@ -4,6 +4,8 @@ PRIORITY = "required"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-${MACHINETYPE}-dvbdrive-${SRCDATE}.zip"
