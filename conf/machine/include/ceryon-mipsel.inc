@@ -43,7 +43,7 @@ IMAGE_CMD_ubi_append = "\
     rm -Rf ${IMAGEDIR}; \
     "
 
-MACHINE_FEATURES += "blindscan-dvbs blindscan-dvbc omb"
+MACHINE_FEATURES += "blindscan-dvbs blindscan-dvbc"
 #MACHINE_FEATURES += "bootsplash"
 
 require conf/machine/include/tune-mips32.inc
