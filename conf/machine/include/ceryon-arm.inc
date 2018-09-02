@@ -7,7 +7,7 @@ MTD_ROOTFS = "mmcblk0p3"
 MTD_BOOTFS = "mmcblk0p1"
 
 MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc linuxwifi swap qthbbtv multitranscoding minitv mountboot"
-#MACHINE_FEATURES += "kodi"
+#MACHINE_FEATURES += "qthbbtv qtstalker"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
     ceryon-lcd \
@@ -15,7 +15,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 
 IMAGE_CLASSES += "ceryon-emmc_image_multi"
 
-MACHINE_FEATURES += "qthbbtv qtstalker"
 DISTRO_FEATURES_remove = "directfb gtk-directfb"
 
 IMAGE_FSTYPES += "ceryon-emmc"
