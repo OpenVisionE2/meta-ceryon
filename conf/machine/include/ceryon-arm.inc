@@ -18,7 +18,7 @@ IMAGE_CLASSES += "ceryon-emmc_image_multi"
 DISTRO_FEATURES_remove = "directfb gtk-directfb"
 
 IMAGE_FSTYPES += "ceryon-emmc"
-IMAGE_ROOTFS_SIZE ?= "294912"
+IMAGE_ROOTFS_SIZE ?= "589824"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
