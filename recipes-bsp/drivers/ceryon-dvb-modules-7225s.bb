@@ -1,9 +1,9 @@
 KV = "4.0.1"
-SRCDATE = "20180827"
+SRCDATE = "20181022"
 MACHINETYPE = "7225s"
 
 require ceryon-dvb-modules.inc
-SRC_URI[md5sum] = "f91f1ae0cd1416ab1dc5876ac13a4f51"
-SRC_URI[sha256sum] = "841bce4b3fafe77b209c1475bddad5d40672d7997fa7fd31b59ee7ccd7ccad07"
+SRC_URI[md5sum] = "f4bc0e64d9871b1095693c5b8620ae7c"
+SRC_URI[sha256sum] = "744628b6a3c80d7ad8163c3df289e0d8ce4880d530f32c5ba40122bcb48e1fa0"
 
 COMPATIBLE_MACHINE = "9911lx|e4hdcombo"
