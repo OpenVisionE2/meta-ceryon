@@ -6,7 +6,7 @@ MTD_KERNEL = "mmcblk0p2"
 MTD_ROOTFS = "mmcblk0p3"
 MTD_BOOTFS = "mmcblk0p1"
 
-MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc linuxwifi swap qthbbtv multitranscoding minitv mountboot"
+MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc linuxwifi swap multitranscoding minitv mountboot"
 #MACHINE_FEATURES += "qthbbtv qtstalker"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
@@ -40,8 +40,6 @@ IMAGE_CMD_ceryon-emmc_append = "\
     zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
-    rm -f ${DEPLOY_DIR_IMAGE}/.ext4; \
-    rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf ${IMAGEDIR}; \
     "
 
