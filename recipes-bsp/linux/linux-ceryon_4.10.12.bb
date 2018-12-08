@@ -4,7 +4,7 @@ LICENSE = "GPLv2"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "protek4k|9911lx|e4hdcombo|sf238|twinboxlcdci5|9920lx|e4hd"
+COMPATIBLE_MACHINE = "protek4k|9911lx|e4hdcombo|sf238|twinboxlcdci5|9920lx"
 
 KERNEL_RELEASE = "4.10.12"
 
