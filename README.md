@@ -1,2 +1,2 @@
 # meta-ceryon
-Ceryon BSP layer for PLi's OE
+Ceryon BSP layer for Open Vision
