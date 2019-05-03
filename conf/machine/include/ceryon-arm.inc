@@ -13,7 +13,7 @@ MACHINE_EXTRA_RRECOMMENDS += "\
     ceryon-lcd \
 "
 
-IMAGE_CLASSES += "ceryon-emmc_image_multi"
+IMAGE_CLASSES += "ceryonemmc_image_multiboot"
 
 DISTRO_FEATURES_remove = "directfb gtk-directfb"
 

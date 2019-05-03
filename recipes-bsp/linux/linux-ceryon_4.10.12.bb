@@ -10,7 +10,7 @@ KERNEL_RELEASE = "4.10.12"
 
 inherit kernel machine_kernel_pr
 
-MACHINE_KERNEL_PR_append = ".1"
+MACHINE_KERNEL_PR_append = ".2"
 
 SRC_URI[mips.md5sum] = "1d85dbb87cd57d6147213c65d73fed9e"
 SRC_URI[mips.sha256sum] = "54bd9694d08c98991174818d85189691d87530a67871938595e889bd36ca0caa"
@@ -45,8 +45,8 @@ SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}-${ARCH}.tar.g
     "
 
 SRC_URI_append_arm = "\
-    file://findkerneldevice.py \
-    file://reserve_dvb_adapter_0.patch \
+    file://findkerneldevice.sh \
+    file://initramfs-subdirboot.cpio.gz;unpack=0 \
     file://blacklist_mmc0.patch \
     "
 
@@ -55,26 +55,19 @@ B = "${WORKDIR}/build"
 
 export OS = "Linux"
 KERNEL_OBJECT_SUFFIX = "ko"
+KERNEL_IMAGEDEST = "tmp"
 
 # Linux MIPS Models
 
-KERNEL_OUTPUT_mips = "vmlinux"
-KERNEL_IMAGETYPE_mips = "vmlinux"
-KERNEL_IMAGEDEST_mips = "boot"
-
-FILES_kernel-image_mips = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}*"
-
-kernel_do_install_append_mips() {
-	${STRIP} ${D}/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-	gzip -9c ${D}/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION} > ${D}/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}.gz
-	rm ${D}/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-}
+KERNEL_OUTPUT_mips = "vmlinux.gz"
+KERNEL_IMAGETYPE_mips = "vmlinux.gz"
+KERNEL_OUTPUT_DIR_mips = "."
 
 pkg_postinst_kernel-image_mips () {
 	if [ "x$D" == "x" ]; then
-		if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}.gz ] ; then
-			flash_erase /dev/mtd1 0 0
-			nandwrite -p /dev/mtd1 /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}.gz
+		if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} ] ; then
+			flash_erase /dev/${MTD_KERNEL} 0 0
+			nandwrite -p /dev/${MTD_KERNEL} /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}
 		fi
 	fi
 	true
@@ -84,20 +77,23 @@ pkg_postinst_kernel-image_mips () {
 
 KERNEL_OUTPUT_arm = "arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
 KERNEL_IMAGETYPE_arm = "zImage"
-KERNEL_IMAGEDEST_arm = "tmp"
 
-FILES_kernel-image_arm = "/${KERNEL_IMAGEDEST}/zImage /${KERNEL_IMAGEDEST}/findkerneldevice.py"
+FILES_kernel-image_arm = "/${KERNEL_IMAGEDEST}/findkerneldevice.sh"
+
+kernel_do_configure_prepend_arm() {
+    install -d ${B}/usr
+    install -m 0644 ${WORKDIR}/initramfs-subdirboot.cpio.gz ${B}/
+}
 
 kernel_do_install_append_arm() {
         install -d ${D}/${KERNEL_IMAGEDEST}
-        install -m 0755 ${KERNEL_OUTPUT} ${D}/${KERNEL_IMAGEDEST}
-        install -m 0755 ${WORKDIR}/findkerneldevice.py ${D}/${KERNEL_IMAGEDEST}
+        install -m 0755 ${WORKDIR}/findkerneldevice.sh ${D}/${KERNEL_IMAGEDEST}
 }
 
 pkg_postinst_kernel-image_arm () {
     if [ "x$D" == "x" ]; then
         if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} ] ; then
-            python /${KERNEL_IMAGEDEST}/findkerneldevice.py
+            /${KERNEL_IMAGEDEST}/./findkerneldevice.sh
             dd if=/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} of=/dev/kernel
         fi
     fi
@@ -106,6 +102,3 @@ pkg_postinst_kernel-image_arm () {
 
 do_rm_work() {
 }
-
-# extra tasks
-addtask kernel_link_images after do_compile before do_install
