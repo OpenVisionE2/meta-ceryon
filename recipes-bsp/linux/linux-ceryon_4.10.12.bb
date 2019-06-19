@@ -10,8 +10,6 @@ KERNEL_RELEASE = "4.10.12"
 
 inherit kernel machine_kernel_pr
 
-MACHINE_KERNEL_PR_append = ".3"
-
 SRC_URI[mips.md5sum] = "1d85dbb87cd57d6147213c65d73fed9e"
 SRC_URI[mips.sha256sum] = "54bd9694d08c98991174818d85189691d87530a67871938595e889bd36ca0caa"
 SRC_URI[arm.md5sum] = "bda1c09ed92a805cedc6770c0dd40e81"
