@@ -24,7 +24,7 @@ do_install() {
     install -d ${D}/${sysconfdir}/modules-load.d
     echo "dvbdrive" > ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
     install -m 0755 ${WORKDIR}/dvbdrive.ko ${D}/lib/modules/${KV}/extra
-    install -d ${D}/etc/rcS.d
+    install -d ${D}${sysconfdir}/rcS.d
 }
 
 FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/modules/${KV}/extra"
