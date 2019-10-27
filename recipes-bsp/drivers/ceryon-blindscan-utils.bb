@@ -8,7 +8,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
-COMPATIBLE_MACHINE = "^(9910lx|e4hd|e4hdhybrid|odin2hybrid|odinplus|sf208|sf228|singleboxlcd|twinboxlcd|mbmicro|protek4k|9911lx|e4hdcombo|sf238|twinboxlcdci5|9920lx|e4hdultra|mbmicrov2)$"
+COMPATIBLE_MACHINE = "^(9910lx|e4hd|e4hdhybrid|odin2hybrid|odinplus|sf208|sf228|singleboxlcd|twinboxlcd|mbmicro|9911lx|e4hdcombo|sf238|twinboxlcdci5|9920lx|mbmicrov2)$"
 
 PACKAGES = "ceryon-blindscan-dvbs-utils ceryon-blindscan-dvbc-utils"
 

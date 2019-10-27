@@ -1,6 +1,5 @@
 DESCRIPTION = "Resize Rootfs"
 require conf/license/license-gplv2.inc
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(e4hdultra|protek4k)$"
 
