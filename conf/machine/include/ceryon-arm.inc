@@ -1,5 +1,8 @@
 require conf/machine/include/ceryon-oem.inc
 
+PREFERRED_PROVIDER_virtual/egl = "ceryon-v3ddriver-${MACHINE}" 
+PREFERRED_PROVIDER_virtual/libgles2 = "ceryon-v3ddriver-${MACHINE}"
+
 ROOTFS_FILE = "rootfs.tar.bz2"
 
 MTD_KERNEL = "mmcblk0p2"
