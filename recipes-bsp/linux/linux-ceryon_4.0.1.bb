@@ -26,7 +26,6 @@ RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 SRC_URI += "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}.tgz \
 	file://defconfig \
 	file://dvb-usb-i2c_duplicate.patch \
-	file://kernel-add-support-for-gcc6.patch \
 	file://0001-Support-TBS-USB-drivers-for-4.0.1-kernel.patch \
 	file://0001-TBS-fixes-for-4.0.1-kernel.patch \
 	file://0001-STV-Add-PLS-support.patch \
@@ -34,6 +33,7 @@ SRC_URI += "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}.tgz \
 	file://blindscan2.patch \
 	file://0001-stv090x-optimized-TS-sync-control.patch \
 	file://0002-add-brcm-chips.patch \
+	file://0003-cp1emu-do-not-use-bools-for-arithmetic.patch \
 	"
 
 S = "${WORKDIR}/linux-${PV}"
