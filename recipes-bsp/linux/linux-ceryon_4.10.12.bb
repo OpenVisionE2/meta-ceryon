@@ -27,6 +27,7 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 
 SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
     file://defconfig \
+    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
     file://export_pmpoweroffprepare.patch \
     file://TBS-fixes-for-4.10-kernel.patch \
     file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
@@ -43,7 +44,7 @@ SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}-${ARCH}.tar.g
     file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
     "
 
-SRC_URI_append_arm = "\
+SRC_URI_append_arm += "\
     file://findkerneldevice.sh \
     file://initramfs-subdirboot.cpio.gz;unpack=0 \
     file://blacklist_mmc0.patch \

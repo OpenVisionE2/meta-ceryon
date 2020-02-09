@@ -25,6 +25,7 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 
 SRC_URI += "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}.tgz \
 	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
 	file://dvb-usb-i2c_duplicate.patch \
 	file://0001-Support-TBS-USB-drivers-for-4.0.1-kernel.patch \
 	file://0001-TBS-fixes-for-4.0.1-kernel.patch \
