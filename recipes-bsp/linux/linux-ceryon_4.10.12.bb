@@ -42,6 +42,7 @@ SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}-${ARCH}.tar.g
     file://v3-3-4-media-dvbsky-MyGica-T230C-support.patch \
     file://v3-3-5-media-dvbsky-MyGica-T230C-support.patch \
     file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
+    file://0003-makefile-disable-warnings.patch \
     "
 
 SRC_URI_append_arm += "\
