@@ -43,7 +43,6 @@ IMAGE_CMD_ceryonemmc_append = "\
     cd ${DEPLOY_DIR_IMAGE}; \
     zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
     rm -Rf ${IMAGEDIR}; \
     "
 
