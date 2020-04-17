@@ -1,4 +1,4 @@
-DESCRIPTION = "Resize Rootfs"
+DESCRIPTION = "Ceryon resize rootfs"
 require conf/license/license-gplv2.inc
 
 COMPATIBLE_MACHINE = "^(e4hdultra|protek4k)$"
