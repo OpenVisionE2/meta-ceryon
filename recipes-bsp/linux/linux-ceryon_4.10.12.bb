@@ -42,6 +42,9 @@ SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}-${ARCH}.tar.g
     file://v3-3-4-media-dvbsky-MyGica-T230C-support.patch \
     file://v3-3-5-media-dvbsky-MyGica-T230C-support.patch \
     file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
+    file://add-more-devices-rtl8xxxu.patch \
+    file://0005-xbox-one-tuner-4.10.patch \
+    file://0006-dvb-media-tda18250-support-for-new-silicon-tuner.patch \
     file://0003-makefile-disable-warnings.patch \
     "
 
