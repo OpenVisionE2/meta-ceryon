@@ -8,10 +8,6 @@ KERNEL_FILE = "kernel.bin"
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-    kernel-module-cdfs \
-    "
-
 MACHINE_EXTRA_RRECOMMENDS += "\
     ${@bb.utils.contains_any("MACHINE", "e4hdultra protek4k", "", "ceryon-shutdown", d)} \
     gstreamer1.0-plugin-dvbmediasink \
