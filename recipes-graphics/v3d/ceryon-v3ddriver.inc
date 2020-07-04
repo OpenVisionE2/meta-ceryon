@@ -9,6 +9,8 @@ DEPENDS = "ceryon-v3ddriver-headers"
 
 PV = "${SRCDATE}"
 
+MACHINETYPE = "${MACHINE}"
+
 SRC_URI = "http://source.mynonpublic.com/ceryon/${MACHINETYPE}-v3ddriver-${SRCDATE}.zip"
 
 S = "${WORKDIR}"

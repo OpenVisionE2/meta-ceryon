@@ -8,6 +8,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PV = "${KV}+${SRCDATE}"
 
+MACHINETYPE = "${MACHINE}"
+
 SRC_URI = "http://source.mynonpublic.com/ceryon/${MACHINETYPE}-drivers-${KV}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"

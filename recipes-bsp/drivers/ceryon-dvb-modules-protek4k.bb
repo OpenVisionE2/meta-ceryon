@@ -1,6 +1,5 @@
 KV = "4.10.12"
 SRCDATE = "20191101"
-MACHINETYPE = "protek4k"
 
 require ceryon-dvb-modules-oem.inc
 SRC_URI[md5sum] = "fd3982477faf522e5c78cef66ac72078"
