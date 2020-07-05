@@ -26,6 +26,6 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-ceryon"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "ceryon-blindscan-utils"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "ceryon-blindscan-utils"
 
-MACHINE_FEATURES += "3dtv alsa hdmicec switchoff videoenhancement blindscan-tbs"
+MACHINE_FEATURES += "alsa hdmicec switchoff videoenhancement blindscan-tbs"
 
 BOOTLOGO_FILENAME = "splash.bin"
