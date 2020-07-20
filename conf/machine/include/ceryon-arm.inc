@@ -56,3 +56,5 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     kernel-module-mt7601u \
     firmware-mt7601u \
     "
+
+STB_PLATFORM = "8100s"
