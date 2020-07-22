@@ -8,6 +8,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     ceryon-dvb-modules-7000s \
     "
 
-MACHINE_FEATURES += "AV_JACK"
+MACHINE_FEATURES += "AV_JACK vfdsymbol"
 
 STB_PLATFORM = "7000s"
