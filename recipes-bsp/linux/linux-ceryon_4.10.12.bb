@@ -67,7 +67,7 @@ KERNEL_OUTPUT_mips = "vmlinux.gz"
 KERNEL_IMAGETYPE_mips = "vmlinux.gz"
 KERNEL_OUTPUT_DIR_mips = "."
 
-pkg_postinst_kernel-image_mips () {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image_mips () {
 	if [ "x$D" == "x" ]; then
 		if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} ] ; then
 			flash_erase /dev/${MTD_KERNEL} 0 0
@@ -94,7 +94,7 @@ kernel_do_install_append_arm() {
         install -m 0755 ${WORKDIR}/findkerneldevice.sh ${D}/${KERNEL_IMAGEDEST}
 }
 
-pkg_postinst_kernel-image_arm () {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image_arm () {
     if [ "x$D" == "x" ]; then
         if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} ] ; then
             /${KERNEL_IMAGEDEST}/./findkerneldevice.sh
