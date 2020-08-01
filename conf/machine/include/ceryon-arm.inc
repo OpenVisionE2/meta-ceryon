@@ -44,7 +44,7 @@ IMAGE_CMD_ceryonemmc_append = "\
     rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
     cd ${DEPLOY_DIR_IMAGE}; \
     zip ${IMAGE_NAME}_recovery_emmc.zip ${IMAGEDIR}/disk.img ${IMAGEDIR}/imageversion; \
-    zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/kernel.bin ${IMAGEDIR}/rootfs.tar.bz2; \
+    zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/${KERNEL_FILE} ${IMAGEDIR}/${ROOTFS_FILE}; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
     rm -Rf ${IMAGEDIR}; \
     "
