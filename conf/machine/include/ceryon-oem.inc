@@ -15,7 +15,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-libav \
     "
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 require conf/machine/include/soc-family.inc
 
