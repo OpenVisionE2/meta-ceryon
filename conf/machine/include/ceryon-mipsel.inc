@@ -22,7 +22,7 @@ IMAGE_CMD_ubi_prepend = "\
     rm -rf ${IMAGE_ROOTFS}/tmp/*; \
     "
 
-IMAGE_CMD_ubi_append = "\
+IMAGE_CMD_ubi_append = " \
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
     ${@bb.utils.contains("MACHINE_FEATURES", "lcd220", "cp ${DEPLOY_DIR_IMAGE}/lcdwarning220.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/lcdwarning.bin;" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "lcd220", "cp ${DEPLOY_DIR_IMAGE}/lcdwaitkey220.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/lcdwaitkey.bin;" , "", d)} \

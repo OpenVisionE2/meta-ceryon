@@ -31,7 +31,7 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 PREFERRED_VERSION_linux-ceryon= "4.10.12"
 PREFERRED_VERSION_directfb = "1.7.7"
 
-IMAGE_CMD_ceryonemmc_append = "\
+IMAGE_CMD_ceryonemmc_append = " \
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
     ${@bb.utils.contains("MACHINE_FEATURES", "lcd220", "cp ${DEPLOY_DIR_IMAGE}/lcdwarning220.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/lcdflashing.bmp;" , "", d)} \
     mv ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.emmc.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/disk.img; \
