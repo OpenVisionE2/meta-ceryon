@@ -1,12 +1,13 @@
 SUMMARY = "Linux kernel for ${MACHINE}"
 SECTION = "kernel"
 LICENSE = "GPLv2"
+LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(protek4k|9911lx|e4hdcombo|sf238|twinboxlcdci5|9920lx|e4hdultra|mbmicrov2)$"
 
-KERNEL_RELEASE = "4.10.12"
+KERNEL_RELEASE = ${KERNELVERSION}"
 
 inherit kernel machine_kernel_pr samba_change_dialect
 
@@ -14,8 +15,6 @@ SRC_URI[mips.md5sum] = "1d85dbb87cd57d6147213c65d73fed9e"
 SRC_URI[mips.sha256sum] = "54bd9694d08c98991174818d85189691d87530a67871938595e889bd36ca0caa"
 SRC_URI[arm.md5sum] = "bda1c09ed92a805cedc6770c0dd40e81"
 SRC_URI[arm.sha256sum] = "67a3ac98727595a399d5c399d3b66a7fadbe8136ac517e08decba5ea6964674a"
-
-LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
@@ -26,33 +25,33 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_VERSION}"
 
 SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
-    file://defconfig \
-    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
-    file://export_pmpoweroffprepare.patch \
-    file://TBS-fixes-for-4.10-kernel.patch \
-    file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
-    file://0001-TBS-fixes-for-4.6-kernel.patch \
-    file://0001-STV-Add-PLS-support.patch \
-    file://0001-STV-Add-SNR-Signal-report-parameters.patch \
-    file://blindscan2.patch \
-    file://0001-stv090x-optimized-TS-sync-control.patch \
-    file://v3-1-3-media-si2157-Add-support-for-Si2141-A10.patch \
-    file://v3-2-3-media-si2168-add-support-for-Si2168-D60.patch \
-    file://v3-3-3-media-dvbsky-MyGica-T230C-support.patch \
-    file://v3-3-4-media-dvbsky-MyGica-T230C-support.patch \
-    file://v3-3-5-media-dvbsky-MyGica-T230C-support.patch \
-    file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
-    file://add-more-devices-rtl8xxxu.patch \
-    file://0005-xbox-one-tuner-4.10.patch \
-    file://0006-dvb-media-tda18250-support-for-new-silicon-tuner.patch \
-    file://0003-makefile-disable-warnings.patch \
-    "
+	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	file://export_pmpoweroffprepare.patch \
+	file://TBS-fixes-for-4.10-kernel.patch \
+	file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
+	file://0001-TBS-fixes-for-4.6-kernel.patch \
+	file://0001-STV-Add-PLS-support.patch \
+	file://0001-STV-Add-SNR-Signal-report-parameters.patch \
+	file://blindscan2.patch \
+	file://0001-stv090x-optimized-TS-sync-control.patch \
+	file://v3-1-3-media-si2157-Add-support-for-Si2141-A10.patch \
+	file://v3-2-3-media-si2168-add-support-for-Si2168-D60.patch \
+	file://v3-3-3-media-dvbsky-MyGica-T230C-support.patch \
+	file://v3-3-4-media-dvbsky-MyGica-T230C-support.patch \
+	file://v3-3-5-media-dvbsky-MyGica-T230C-support.patch \
+	file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
+	file://add-more-devices-rtl8xxxu.patch \
+	file://0005-xbox-one-tuner-4.10.patch \
+	file://0006-dvb-media-tda18250-support-for-new-silicon-tuner.patch \
+	file://0003-makefile-disable-warnings.patch \
+	"
 
-SRC_URI_append_arm += "\
-    file://findkerneldevice.sh \
-    file://initramfs-subdirboot.cpio.gz;unpack=0 \
-    file://blacklist_mmc0.patch \
-    "
+SRC_URI_append_arm = "\
+	file://findkerneldevice.sh \
+	file://initramfs-subdirboot.cpio.gz;unpack=0 \
+	file://blacklist_mmc0.patch \
+	"
 
 S = "${WORKDIR}/linux-${PV}"
 B = "${WORKDIR}/build"

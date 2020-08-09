@@ -1,4 +1,3 @@
-KV = "4.10.12"
 SRCDATE = "20191101"
 
 MACHINETYPE = "e4hd"

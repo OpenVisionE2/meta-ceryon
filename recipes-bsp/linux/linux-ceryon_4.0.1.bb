@@ -1,19 +1,18 @@
 SUMMARY = "Linux kernel for ${MACHINE}"
 SECTION = "kernel"
 LICENSE = "GPLv2"
+LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(9910lx|e4hd|e4hdhybrid|odin2hybrid|odinplus|sf208|sf228|singleboxlcd|twinboxlcd|mbmicro)$"
 
-KERNEL_RELEASE = "4.0.1"
+KERNEL_RELEASE = ${KERNELVERSION}"
 
 inherit kernel machine_kernel_pr samba_change_dialect
 
 SRC_URI[md5sum] = "53d1614e476bc1141b35266cb31ba091"
 SRC_URI[sha256sum] = "385d8efec92b5d3bc8e16c37673e4a2a38a6541b684311650040aa5d67508c3e"
-
-LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
@@ -23,7 +22,7 @@ PKG_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION}"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}.tgz \
+SRC_URI = "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}.tgz \
 	file://defconfig \
 	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
 	file://dvb-usb-i2c_duplicate.patch \
@@ -35,8 +34,8 @@ SRC_URI += "http://source.mynonpublic.com/ceryon/ceryon-linux-${PV}.tgz \
 	file://0001-stv090x-optimized-TS-sync-control.patch \
 	file://0002-add-brcm-chips.patch \
 	file://0003-cp1emu-do-not-use-bools-for-arithmetic.patch \
-        file://0004-log2-give-up-on-gcc-constant-optimizations.patch \
-        file://0005-makefile-disable-warnings.patch \
+	file://0004-log2-give-up-on-gcc-constant-optimizations.patch \
+	file://0005-makefile-disable-warnings.patch \
 	"
 
 S = "${WORKDIR}/linux-${PV}"

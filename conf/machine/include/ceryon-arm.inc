@@ -1,5 +1,7 @@
 require conf/machine/include/ceryon-oem.inc
 
+KERNELVERSION = "4.10.12"
+
 PREFERRED_PROVIDER_virtual/egl = "ceryon-v3ddriver-${MACHINE}" 
 PREFERRED_PROVIDER_virtual/libgles2 = "ceryon-v3ddriver-${MACHINE}"
 
@@ -15,8 +17,8 @@ MTD_BLACK  = "mmcblk0"
 MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc swap multitranscoding minitv mountboot swap"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
-    ceryon-lcd \
-"
+	ceryon-lcd \
+	"
 
 IMAGE_CLASSES += "ceryonemmc_image_multiboot"
 
@@ -28,7 +30,7 @@ IMAGE_ROOTFS_SIZE ?= "589824"
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 
-PREFERRED_VERSION_linux-ceryon= "4.10.12"
+PREFERRED_VERSION_linux-ceryon= "${KERNELVERSION}"
 PREFERRED_VERSION_directfb = "1.7.7"
 
 IMAGE_CMD_ceryonemmc_append = " \
@@ -52,9 +54,9 @@ IMAGE_CMD_ceryonemmc_append = " \
 require conf/machine/include/tune-cortexa15.inc
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    ceryon-dvb-modules-${MACHINE} \
-    kernel-module-mt7601u \
-    firmware-mt7601u \
-    "
+	ceryon-dvb-modules-${MACHINE} \
+	kernel-module-mt7601u \
+	firmware-mt7601u \
+	"
 
 STB_PLATFORM = "8100s"

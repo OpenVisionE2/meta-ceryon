@@ -1,16 +1,18 @@
 require conf/machine/include/ceryon-mipsel.inc
 
+KERNELVERSION = "4.10.12"
+
 SOC_FAMILY = "bcm73625"
 
-PREFERRED_VERSION_linux-ceryon= "4.10.12"
+PREFERRED_VERSION_linux-ceryon= "${KERNELVERSION}"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    ceryon-dvb-modules-7215s \
-    "
+	ceryon-dvb-modules-7215s \
+	"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
-    ceryon-lcd \
-    "
+	ceryon-lcd \
+	"
 
 MACHINE_FEATURES += "colorlcd220 lcd220 ci RCA"
 

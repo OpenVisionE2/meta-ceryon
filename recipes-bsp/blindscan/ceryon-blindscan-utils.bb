@@ -14,7 +14,6 @@ RPROVIDES_ceryon-blindscan-dvbc-utils += "virtual/blindscan-dvbc"
 
 SRC_URI = "file://ceryon_blindscan file://tda1002x"
 
-PV = "1.0"
 
 S = "${WORKDIR}/"
 
