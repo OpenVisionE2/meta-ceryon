@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(9910lx|e4hd|e4hdhybrid|odin2hybrid|odinplus|sf208|sf228|singleboxlcd|twinboxlcd|mbmicro)$"
 
-KERNEL_RELEASE = ${KERNELVERSION}"
+KERNEL_RELEASE = "${KERNELVERSION}"
 
 inherit kernel machine_kernel_pr samba_change_dialect
 
