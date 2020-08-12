@@ -27,3 +27,5 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbc = "ceryon-blindscan-utils"
 MACHINE_FEATURES += "alsa hdmicec switchoff videoenhancement blindscan-tbs HDMI"
 
 BOOTLOGO_FILENAME = "splash.bin"
+
+BLINDSCAN_BINARY = "ceryon_blindscan"
