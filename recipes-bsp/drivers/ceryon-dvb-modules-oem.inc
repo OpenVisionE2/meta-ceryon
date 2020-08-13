@@ -22,12 +22,12 @@ do_populate_sysroot() {
 }
 
 do_install() {
-    install -d ${D}${base_libdir}/modules/${KV}/extra
+    install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
     install -d ${D}${sysconfdir}/modules-load.d
     for i in ${MACHINETYPE}_1 ${MACHINETYPE}_2 ${MACHINETYPE}_3 ${MACHINETYPE}_4; do
-        install -m 0755 ${WORKDIR}/$i.ko ${D}${base_libdir}/modules/${KV}/extra
+        install -m 0755 ${WORKDIR}/$i.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra
         echo $i >> ${D}${sysconfdir}/modules-load.d/_${MACHINETYPE}.conf
     done
 }
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINETYPE}.conf ${base_libdir}/modules/${KV}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINETYPE}.conf ${nonarch_base_libdir}/modules/${KV}/extra"
