@@ -12,18 +12,18 @@ PROVIDES += "virtual/blindscan-dvbs virtual/blindscan-dvbc"
 RPROVIDES_ceryon-blindscan-dvbs-utils += "virtual/blindscan-dvbs"
 RPROVIDES_ceryon-blindscan-dvbc-utils += "virtual/blindscan-dvbc"
 
-SRC_URI = "file://ceryon_blindscan file://tda1002x"
+SRC_URI = "file://${BLINDSCAN_BINARY} file://tda1002x"
 
 
 S = "${WORKDIR}/"
 
-FILES_ceryon-blindscan-dvbs-utils = "${bindir}/ceryon_blindscan"
+FILES_ceryon-blindscan-dvbs-utils = "${bindir}/${BLINDSCAN_BINARY}"
 FILES_ceryon-blindscan-dvbc-utils = "${bindir}/tda1002x"
 
 do_install() {
-    install -d ${D}/${bindir}/
-    install -m 0755 "${S}/tda1002x" "${D}/${bindir}"
-    install -m 0755 "${S}/ceryon_blindscan" "${D}/${bindir}"
+    install -d ${D}${bindir}/
+    install -m 0755 "${S}/tda1002x" "${D}${bindir}"
+    install -m 0755 "${S}/${BLINDSCAN_BINARY}" "${D}${bindir}"
 }
 
 do_prepare_recipe_sysroot[noexec] = "1"

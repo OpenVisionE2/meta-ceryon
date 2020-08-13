@@ -23,8 +23,8 @@ do_populate_sysroot() {
 
 do_install() {
     install -d ${D}${base_libdir}/modules/${KV}/extra
-    install -d ${D}/${sysconfdir}/modules-load.d
-    echo "dvbdrive" > ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
+    install -d ${D}${sysconfdir}/modules-load.d
+    echo "dvbdrive" > ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
     install -m 0755 ${WORKDIR}/dvbdrive.ko ${D}${base_libdir}/modules/${KV}/extra
     install -d ${D}${sysconfdir}/rcS.d
 }
