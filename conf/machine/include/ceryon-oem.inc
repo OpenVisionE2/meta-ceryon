@@ -8,7 +8,7 @@ KERNEL_FILE = "kernel.bin"
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
-MACHINE_EXTRA_RRECOMMENDS += "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains_any("MACHINE", "e4hdultra protek4k", "", "ceryon-shutdown", d)} \
 	gstreamer1.0-plugin-dvbmediasink \
 	${@bb.utils.contains("MACHINE_FEATURES", "emmc", "ceryon-resizerootfs" , "", d)} \

@@ -8,9 +8,6 @@ PREFERRED_VERSION_linux-ceryon = "${KERNELVERSION}"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	ceryon-dvb-modules-7100s \
-	"
-
-MACHINE_EXTRA_RRECOMMENDS += "\
 	ceryon-lcd \
 	"
 

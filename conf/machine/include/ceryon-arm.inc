@@ -16,7 +16,7 @@ MTD_BLACK  = "mmcblk0"
 
 MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc swap multitranscoding minitv mountboot swap"
 
-MACHINE_EXTRA_RRECOMMENDS += "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	ceryon-lcd \
 	"
 
