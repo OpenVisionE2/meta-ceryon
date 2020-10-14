@@ -15,7 +15,7 @@ RPROVIDES_ceryon-blindscan-dvbc-utils += "virtual/blindscan-dvbc"
 SRC_URI = "file://${BLINDSCAN_BINARY} file://tda1002x"
 
 
-S = "${WORKDIR}/"
+S = "${WORKDIR}"
 
 FILES_ceryon-blindscan-dvbs-utils = "${bindir}/${BLINDSCAN_BINARY}"
 FILES_ceryon-blindscan-dvbc-utils = "${bindir}/tda1002x"
