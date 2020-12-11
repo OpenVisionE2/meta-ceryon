@@ -2,9 +2,6 @@ require conf/machine/include/ceryon-oem.inc
 
 KERNELVERSION = "4.10.12"
 
-PREFERRED_PROVIDER_virtual/egl = "ceryon-v3ddriver-${MACHINE}" 
-PREFERRED_PROVIDER_virtual/libgles2 = "ceryon-v3ddriver-${MACHINE}"
-
 ROOTFS_FILE = "rootfs.tar.bz2"
 
 SOC_FAMILY = "bcm7252s"
