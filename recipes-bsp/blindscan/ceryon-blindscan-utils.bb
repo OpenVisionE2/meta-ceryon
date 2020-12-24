@@ -1,10 +1,12 @@
 SUMMARY = "Utilities for transponder & dvb-s/c blindscan"
 SECTION = "base"
 PRIORITY = "optional"
-RDEPENDS_${PN} = "ncurses"
-
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
+
+RDEPENDS_${PN} = "ncurses"
+
+COMPATIBLE_MACHINE = "^(9910lx|e4hd|e4hdhybrid|odin2hybrid|odinplus|sf208|sf228|singleboxlcd|twinboxlcd|mbmicro|9911lx|e4hdcombo|sf238|twinboxlcdci5|9920lx|mbmicrov2)$"
 
 PACKAGES = "ceryon-blindscan-dvbs-utils ceryon-blindscan-dvbc-utils"
 
