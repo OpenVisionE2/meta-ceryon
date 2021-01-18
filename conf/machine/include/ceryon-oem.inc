@@ -10,9 +10,7 @@ DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains_any("MACHINE", "e4hdultra protek4k", "", "ceryon-shutdown", d)} \
-	gstreamer1.0-plugin-dvbmediasink \
 	${@bb.utils.contains("MACHINE_FEATURES", "emmc", "ceryon-resizerootfs" , "", d)} \
-	gstreamer1.0-libav \
 	"
 
 require conf/machine/include/soc-family.inc
