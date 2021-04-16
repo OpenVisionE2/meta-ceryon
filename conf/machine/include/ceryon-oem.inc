@@ -5,7 +5,6 @@ BOX_BRAND = "ceryon"
 
 KERNEL_FILE = "kernel.bin"
 
-DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains_any("MACHINE", "e4hdultra protek4k", "", "ceryon-shutdown", d)} \
