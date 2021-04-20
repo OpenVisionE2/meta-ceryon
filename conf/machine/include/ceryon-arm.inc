@@ -11,7 +11,7 @@ MTD_ROOTFS = "mmcblk0p3"
 MTD_BOOTFS = "mmcblk0p1"
 MTD_BLACK  = "mmcblk0"
 
-MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc swap multitranscoding minitv mountboot swap"
+MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc swap multitranscoding minitv mountboot swap linuxwifi"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	ceryon-lcd \

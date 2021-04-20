@@ -10,7 +10,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	ceryon-dvb-modules-7225s \
 	"
 
-MACHINE_FEATURES += "textlcd ci 7segment dvb-c RCA"
+MACHINE_FEATURES += "textlcd ci 7segment dvb-c RCA linuxwifi"
 
 DVBMEDIASINK_CONFIG += "--with-h265 --with-vb6 --with-vb8 --with-spark"
 
