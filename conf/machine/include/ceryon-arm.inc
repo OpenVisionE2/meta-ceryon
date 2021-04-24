@@ -15,6 +15,7 @@ MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc swap multitranscoding 
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	ceryon-lcd \
+	ceryon-v3ddriver-${STB_PLATFORM} \
 	"
 
 IMAGE_CLASSES += "ceryonemmc_image_multiboot"
@@ -29,6 +30,9 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 
 PREFERRED_VERSION_linux-ceryon= "${KERNELVERSION}"
 PREFERRED_VERSION_directfb = "1.7.7"
+
+PREFERRED_PROVIDER_virtual/egl = "ceryon-v3ddriver-${STB_PLATFORM}" 
+PREFERRED_PROVIDER_virtual/libgles2 = "ceryon-v3ddriver-${STB_PLATFORM}"
 
 IMAGE_CMD_prepend = " \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
