@@ -20,7 +20,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 
 IMAGE_CLASSES += "ceryonemmc_image_multiboot"
 
-DISTRO_FEATURES_remove += "directfb gtk-directfb"
 
 IMAGE_FSTYPES += "ceryonemmc"
 IMAGE_ROOTFS_SIZE ?= "589824"
@@ -29,7 +28,6 @@ TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 
 PREFERRED_VERSION_linux-ceryon= "${KERNELVERSION}"
-PREFERRED_VERSION_directfb = "1.7.7"
 
 PREFERRED_PROVIDER_virtual/egl = "ceryon-v3ddriver-${STB_PLATFORM}" 
 PREFERRED_PROVIDER_virtual/libgles2 = "ceryon-v3ddriver-${STB_PLATFORM}"
