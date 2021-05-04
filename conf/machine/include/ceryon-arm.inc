@@ -11,7 +11,7 @@ MTD_ROOTFS = "mmcblk0p3"
 MTD_BOOTFS = "mmcblk0p1"
 MTD_BLACK  = "mmcblk0"
 
-MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc swap multitranscoding minitv mountboot swap linuxwifi"
+MACHINE_FEATURES += "colorlcd220 lcd220 ci dvb-c emmc mmc swap multitranscoding minitv mountboot swap linuxwifi kodi19"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	ceryon-lcd \
@@ -19,7 +19,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	"
 
 IMAGE_CLASSES += "ceryonemmc_image_multiboot"
-
 
 IMAGE_FSTYPES += "ceryonemmc"
 IMAGE_ROOTFS_SIZE ?= "589824"
@@ -29,8 +28,8 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 
 PREFERRED_VERSION_linux-ceryon= "${KERNELVERSION}"
 
-PREFERRED_PROVIDER_virtual/egl = "ceryon-v3ddriver-${STB_PLATFORM}" 
-PREFERRED_PROVIDER_virtual/libgles2 = "ceryon-v3ddriver-${STB_PLATFORM}"
+PREFERRED_PROVIDER_virtual/egl ?= "ceryon-v3ddriver-${STB_PLATFORM}" 
+PREFERRED_PROVIDER_virtual/libgles2 ?= "ceryon-v3ddriver-${STB_PLATFORM}"
 
 IMAGE_CMD_prepend = " \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
@@ -64,3 +63,5 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	"
 
 STB_PLATFORM = "8100s"
+
+REFERRED_PROVIDER_virtual/kodi = "stb-kodi-${STB_PLATFORM}"
